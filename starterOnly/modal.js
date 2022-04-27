@@ -26,6 +26,8 @@ document.getElementsByClassName("close")[0].addEventListener("click", closeModal
 // close modal form
 function closeModal() {
   modalbg.style.display = "none";
+  form.style.display = "block";
+  signupConfirmation.style.display = "none";
 }
 
 // form DOM elements for form validation
@@ -38,6 +40,7 @@ const locationContainer = document.getElementById("locationContainer");
 const conditions = document.getElementById("conditions");
 
 const form = document.getElementById("signup-form");
+const signupConfirmation = document.getElementById("signup-confirmation");
 
 
 function showErrorMessage(element, message) {
@@ -170,9 +173,10 @@ form.addEventListener('submit', function (e) {
       isLocationValid &&
       isConditionsValid;
 
-  // submit to the server if the form is valid
+  // submit to the server if the form is valid. For this exercise: we'll hide the signup form and show a confirmation message
   if (isFormValid) {
-
+    form.style.display = "none";
+    signupConfirmation.style.display = "block";
   }
 });
 
