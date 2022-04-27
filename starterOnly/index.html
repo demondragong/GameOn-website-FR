@@ -50,30 +50,37 @@
                 <div class="content">
                     <span class="close"></span>
                     <div class="modal-body">
-                        <form name="reserve" action="index.html" method="get" onsubmit="return validate();">
-                            <div class="formData">
-                                <label>Prénom</label><br />
-                                <input class="text-control" type="text" id="first" name="first" minlength="2" /><br />
+                        <form id="signup-form" name="reserve">
+                        <!-- <form id="signup-form" name="reserve" action="index.html" method="get" onsubmit="return validate();"> -->
+    
+                          <div class="formData">
+                                <label for="fname">Prénom</label><br />
+                                <input class="text-control" type="text" id="fname" name="fname"/>
+                                <span class="error" aria-live="polite"></span>
                             </div>
                             <div class="formData">
-                                <label>Nom</label><br />
-                                <input class="text-control" type="text" id="last" name="last" /><br />
+                                <label for="lname">Nom</label><br />
+                                <input class="text-control" type="text" id="lname" name="lname"/>
+                                <span class="error" aria-live="polite"></span>
                             </div>
                             <div class="formData">
-                                <label>E-mail</label><br />
-                                <input class="text-control" type="email" id="email" name="email" /><br />
+                                <label for="email">E-mail</label><br />
+                                <input class="text-control" type="text" id="email" name="email" />
+                                <span class="error" aria-live="polite"></span>
                             </div>
                             <div class="formData">
-                                <label>Date de naissance</label><br />
-                                <input class="text-control" type="date" id="birthdate" name="birthdate" /><br />
+                                <label for="birthdate">Date de naissance</label><br />
+                                <input class="text-control" type="date" id="birthdate" name="birthdate" />
+                                <span class="error" aria-live="polite"></span>
                             </div>
                             <div class="formData">
-                                <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br />
-                                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" />
+                                <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br />
+                                <input type="number" class="text-control" id="numberOfTournaments" name="numberOfTournaments"/>
+                                <span class="error" aria-live="polite"></span>
                             </div>
                             <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
-                            <div class="formData">
-                                <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
+                            <div id="locationContainer" class="formData">
+                                <input class="checkbox-input" type="radio" id="location1" name="location" value="New York"/>
                                 <label class="checkbox-label" for="location1">
                                     <span class="checkbox-icon"></span>
                                     New York
@@ -104,22 +111,23 @@
                                     Portland
                                 </label>
                             </div>
+                            <span class="error" aria-live="polite"></span>
 
                             <div class="formData">
-                                <input class="checkbox-input" type="checkbox" id="checkbox1" checked />
-                                <label class="checkbox2-label" for="checkbox1">
+                                <input class="checkbox-input" type="checkbox" id="checkbox1" checked/>
+                                <label class="checkbox2-label" for="checkbox1" id="conditions">
                                     <span class="checkbox-icon"></span>
                                     J'ai lu et accepté les conditions d'utilisation.
                                 </label>
-                                <br />
+                                <span class="error" aria-live="polite"></span>
                                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                                 <label class="checkbox2-label" for="checkbox2">
                                     <span class="checkbox-icon"></span>
-                                    Je Je souhaite être prévenu des prochains évènements.
+                                    Je souhaite être prévenu des prochains évènements.
                                 </label>
                                 <br />
                             </div>
-                            <input class="btn-submit button" type="submit" value="C'est parti" />
+                            <input id="submit" class="btn-submit" type="submit" value="C'est parti" />
                         </form>
                     </div>
                 </div>
