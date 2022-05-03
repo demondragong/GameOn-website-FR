@@ -57,7 +57,7 @@ function clearErrorMessage(element) {
   element.className = 'text-control';
 }
 
-// check firstname field
+// check first name field 
 function checkFirstName() {
   let valid = false;
   if(fname.value.length >= 2) {
@@ -69,7 +69,7 @@ function checkFirstName() {
   return valid;
 }
 
-// check firstname field
+// check last name field
 function checkLastName() {
   let valid = false;
   if(lname.value.length >= 2) {
