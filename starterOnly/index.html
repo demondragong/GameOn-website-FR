@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="utf-8" />
-        <title>Reservation</title>
+        <title>Réservation</title>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="stylesheet" href="modal.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -14,12 +14,12 @@
                 <img alt="logo" src="Logo.png"/>
             </div>
             <div class="main-navbar">
-                <a href="#" class="active"><span>Accueil</span></a>
-                <a href="#"><span>Détails de l'évènement</span></a>
-                <a href="#"><span>À propos</span></a>
-                <a href="#"><span>Contact</span></a>
-                <a href="#"><span>Évènements passés</span></a>
-                <a href="javascript:void(0);" class="icon" onclick="editNav()">
+                <a href="#" class="active menu-item"><span>Accueil</span></a>
+                <a href="#" class="menu-item"><span>Détails de l'évènement</span></a>
+                <a href="#" class="menu-item"><span>À propos</span></a>
+                <a href="#" class="menu-item"><span>Contact</span></a>
+                <a href="#" class="menu-item"><span>Évènements passés</span></a>
+                <a class="icon" id="burger-menu">
                     <i class="fa fa-bars"></i>
                 </a>
             </div>
@@ -51,7 +51,6 @@
                     <span class="close"></span>
                     <div class="modal-body">
                         <form id="signup-form" name="reserve">
-                        <!-- <form id="signup-form" name="reserve" action="index.html" method="get" onsubmit="return validate();"> -->
                           <div class="formData">
                                 <label for="fname">Prénom</label><br />
                                 <input class="text-control" type="text" id="fname" name="fname"/>
