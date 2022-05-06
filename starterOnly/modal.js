@@ -57,10 +57,13 @@ function clearErrorMessage(element) {
   element.className = 'text-control';
 }
 
+// name regular expression
+const nameRegExp = /^(?! )[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
+
 // check first name field 
 function checkFirstName() {
   let valid = false;
-  if(fname.value.length >= 2) {
+  if (nameRegExp.test(fname.value) && fname.value.length >= 2) {
     clearErrorMessage(fname);
     valid = true;
   } else {
@@ -72,7 +75,7 @@ function checkFirstName() {
 // check last name field
 function checkLastName() {
   let valid = false;
-  if(lname.value.length >= 2) {
+  if (nameRegExp.test(lname.value) && lname.value.length >= 2) {
     clearErrorMessage(lname);
     valid = true;
   } else {
@@ -95,10 +98,12 @@ function checkEmail() {
   return valid;
 }
 
-// check a birthdate has been provided
+// check a birthdate has been provided and the date is in the past
 function checkBirthdate() {
   let valid = false;
-  if (birthdate.value) {
+  let today = new Date();
+  let dateOfBirth = new Date(birthdate.value);
+  if (birthdate.value && today.getTime() >= dateOfBirth.getTime()) {
     clearErrorMessage(birthdate);
     valid = true;
   } else {
@@ -110,11 +115,11 @@ function checkBirthdate() {
 // check a number of tournaments has been provided
 function checkNumberOfTournaments() {
   let valid = false;
-  if (numberOfTournaments.value) {
+  if (numberOfTournaments.value >=0) {
     clearErrorMessage(numberOfTournaments);
     valid = true;
   } else {
-    showErrorMessage(numberOfTournaments, "Vous devez entrer un nombre.");
+    showErrorMessage(numberOfTournaments, "Vous devez entrer un nombre positif.");
   }
   return valid;
 }
